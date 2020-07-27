@@ -28,6 +28,12 @@ int DMem::read_data(int address) {
     }
 }
 
+void DMem::print_all() {
+    for(auto it = data_memory.cbegin(); it != data_memory.cend(); ++it) {
+        cout << "Address: " << it->first << " Values: " << it->second << endl;
+    }
+}
+
 void DMem::set_control(Control& c) {
     this->ctr = c;
 }
