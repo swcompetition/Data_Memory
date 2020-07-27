@@ -1,5 +1,8 @@
 #include "DMem.h"
 void DMem::write_data(int address, int value) {
+    if (!ctr.getMemWrite()) {
+        return;
+    }
     // Insert those value to address
     map<int, int>::iterator tmp_finder = data_memory.find(address);
 
@@ -13,6 +16,9 @@ void DMem::write_data(int address, int value) {
 
 
 int DMem::read_data(int address) {
+    if (!ctr.getMemRead()) {
+        return -1;
+    }
     map<int, int>::iterator tmp_finder = data_memory.find(address);
 
     if (tmp_finder != data_memory.end()) {
