@@ -1,7 +1,13 @@
+#include <iostream>
+#include <map>
+
+using namespace std;
+
 class DMem {
 private:
-    int rd_value; // to write
+    map<int, int> data_memory;
 
 public:
-    void write_data(int& value);
+    void write_data(int address, int value);
+    int read_data(int address);
 };
