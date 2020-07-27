@@ -21,3 +21,7 @@ int DMem::read_data(int address) {
         return -1;
     }
 }
+
+void DMem::set_control(Control& c) {
+    this->ctr = c;
+}
